@@ -28,7 +28,7 @@ async function login(req, res) {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
 
-    if (!user || !(await compare(password, user.password))) {
+    if (!user || !compare(password, user.password)) {
       return res.status(400).json({ error: "Credenciais inválidas" });
     }
 

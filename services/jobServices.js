@@ -18,10 +18,6 @@ exports.getJobs = async (req, res) => {
 
     res.json(response.data);
   } catch (error) {
-    console.error(
-      "❌ Erro ao buscar vagas:",
-      error.response?.data || error.message
-    );
     res.status(500).json({ message: "Erro ao buscar vagas de emprego" });
   }
 };
